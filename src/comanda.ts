@@ -17,20 +17,24 @@ class Comanda {
   }
 
   printToPDF(filename: string): void {
-    const doc = new PDFDocument();
+    const doc = new PDFDocument({
+      size: [165, 297], // Largura de 58 mm (~165 pontos) e altura padrão
+      margins: { top: 0, left: 0, bottom: 0, right: 0 } // Margens zero para usar toda a largura
+    });
+
     doc.pipe(fs.createWriteStream(filename));
 
-    doc.fontSize(25).text('=== Comanda ===', { align: 'center' });
+    doc.fontSize(16).text('=== Comanda ===', { align: 'center', width: 165 });
 
     let total = 0;
     this.items.forEach(item => {
       const itemTotal = item.quantity * item.price;
       total += itemTotal;
-      doc.fontSize(14).text(`${item.name}: ${item.quantity} x $${item.price.toFixed(2)} = $${itemTotal.toFixed(2)}`);
+      doc.fontSize(12).text(`${item.name}: ${item.quantity} x $${item.price.toFixed(2)} = $${itemTotal.toFixed(2)}`, { width: 165 });
     });
 
     doc.moveDown();
-    doc.fontSize(18).text(`Total: $${total.toFixed(2)}`, { align: 'center' });
+    doc.fontSize(14).text(`Total: $${total.toFixed(2)}`, { align: 'center', width: 165 });
 
     doc.end();
   }
