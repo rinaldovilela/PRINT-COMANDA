@@ -1,0 +1,57 @@
+# Dependências do Node.js
+node_modules/
+package-lock.json
+
+# Logs
+logs/
+*.log
+
+# Diretórios de compilação
+dist/
+build/
+
+# Configurações específicas do ambiente
+.env
+.env.*
+
+# Arquivos e pastas de configuração de IDE
+.vscode/
+.idea/
+
+# Sistema de cache
+.cache/
+*.swp
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+*.egg-info/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.class
+target/
+*.log
+
+# Arquivos temporários
+tmp/
+*.tmp
+
+# Arquivos de teste
+coverage/
+*.cover
+
+# Outros
+*.pem
+*.key
+*.crt

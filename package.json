@@ -1,0 +1,19 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "main": "dist/comanda.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/comanda.js",
+    "dev": "ts-node src/comanda.ts"
+  },
+  "dependencies": {
+    "pdf-to-printer": "^5.6.0",
+    "pdfkit": "^0.15.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/pdfkit": "^0.13.4"
+  }
+}
